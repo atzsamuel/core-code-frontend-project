@@ -24,11 +24,11 @@ const LoginForm = () => {
         rules={[
           {
             required: true,
-            message: 'Please input your Username!',
+            message: 'Please input your email!',
           },
         ]}
       >
-        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Email" />
       </Form.Item>
       <Form.Item
         name="password"
@@ -56,8 +56,13 @@ const LoginForm = () => {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
+        <Button block type="primary" htmlType="submit" className="login-form-button">
           <Link to="/dashboard">Log in</Link>
+        </Button>
+      </Form.Item>
+      <Form.Item>
+        <Button block type="secondary" htmlType="submit" className="login-form-button">
+          <Link to="/dashboard">Sign in with Google</Link>
         </Button>
       </Form.Item>
       <Form.Item>
