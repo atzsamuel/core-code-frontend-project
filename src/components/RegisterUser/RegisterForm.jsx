@@ -1,56 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Form,
   Input,
-  InputNumber,
-  Cascader,
   Select,
-  Row,
-  Col,
   Checkbox,
   Button,
-  AutoComplete,
 } from 'antd';
+import { tailFormItemLayout, formItemLayout } from './defaultLayout';
 
 const { Option } = Select;
 
-const formItemLayout = {
-  labelCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 8,
-    },
-  },
-  wrapperCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 16,
-    },
-  },
-};
-
-const tailFormItemLayout = {
-  wrapperCol: {
-    xs: {
-      span: 24,
-      offset: 0,
-    },
-    sm: {
-      span: 16,
-      offset: 8,
-    },
-  },
-};
-
 const RegisterForm = () => {
+
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+    const data = {
+      email: values.email,
+      firstname: values.firstname,
+      lastname: values.lastname,
+      password: values.password,
+      confirm: values.confirm,
+      nickname: values.nickname,
+      phone: values.phone,
+      gender: values.gender,
+      agreement: values.agreement
+    }
+    console.log('Received values of form: ', data);
   };
 
   return (
@@ -82,7 +59,7 @@ const RegisterForm = () => {
         <Input />
       </Form.Item>
       <Form.Item
-        name="fistname"
+        name="firstname"
         label="First Name"
         rules={[
           {
@@ -217,6 +194,9 @@ const RegisterForm = () => {
         <Button type="primary" htmlType="submit">
           Register
         </Button>
+      </Form.Item>
+      <Form.Item  {...tailFormItemLayout}>
+        You have already account <Link to="/login">Log in</Link>
       </Form.Item>
     </Form>
   );

@@ -9,7 +9,7 @@ const RegisterUser = () => {
         <Card >
           <Row >
             <Col span={12}>
-              <h2>Register for Budget App</h2>
+              <h1>Register for Budget App</h1>
               <RegisterForm />
             </Col>
           </Row>

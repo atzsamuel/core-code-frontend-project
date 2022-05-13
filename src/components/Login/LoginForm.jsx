@@ -2,12 +2,15 @@ import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import "./loginForm.css";
-import { useState } from 'react';
 
 const LoginForm = () => {
-  const { remember, setRemember } = useState(true);
+
   const onFinish = (values) => {
-    alert('Received values of form: ', values);
+    const data = {
+      email: values.email,
+      password: values.password
+    }
+    console.log('Received values of form: ', data);
   };
 
   return (
@@ -20,7 +23,7 @@ const LoginForm = () => {
       onFinish={onFinish}
     >
       <Form.Item
-        name="username"
+        name="email"
         rules={[
           {
             required: true,
@@ -50,14 +53,12 @@ const LoginForm = () => {
           <Checkbox>Remember me</Checkbox>
         </Form.Item>
 
-        <a className="login-form-forgot" href="">
-          Forgot password
-        </a>
+        <Link className='login-form-forgot' to="/dashboard">Forgot password</Link>
       </Form.Item>
 
       <Form.Item>
         <Button block type="primary" htmlType="submit" className="login-form-button">
-          <Link to="/dashboard">Log in</Link>
+          Log in
         </Button>
       </Form.Item>
       <Form.Item>
