@@ -1,33 +1,54 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import {
   Form,
   Input,
-  Select,
   Checkbox,
   Button,
 } from 'antd';
 import { tailFormItemLayout, formItemLayout } from './defaultLayout';
-
-const { Option } = Select;
+import { registerUser } from '../../apis/loginUser';
+import { Link, useNavigate } from 'react-router-dom';
+import swal from 'sweetalert2';
 
 const RegisterForm = () => {
 
   const [form] = Form.useForm();
+  const navigate = useNavigate();
 
-  const onFinish = (values) => {
-    const data = {
-      email: values.email,
-      firstname: values.firstname,
-      lastname: values.lastname,
-      password: values.password,
-      confirm: values.confirm,
-      nickname: values.nickname,
-      phone: values.phone,
-      gender: values.gender,
-      agreement: values.agreement
+  const onFinish = async (values) => {
+    try {
+      const data = {
+        email: values.email,
+        password: values.password,
+        firstname: values.firstname,
+        lastname: values.lastname,
+        agreement: values.agreement
+      }
+      const response = await registerUser(data);
+      console.log(response);
+      swal.fire({
+        width: '500px',
+        // height:'850px',
+        position: 'top-end',
+        icon: 'success',
+        title: `${response.data[0].firstname} ${response.data[0].lastname}`,
+        text: response.message,
+        showConfirmButton: false,
+        timer: 2500,
+      });
+      form.resetFields();
+      navigate('/login', { replace: true });
+    } catch (error) {
+      swal.fire({
+        width: '500px',
+        position: 'top-end',
+        icon: 'error',
+        title: 'Error',
+        text: 'Something went wrong',
+        showConfirmButton: false,
+        timer: 2500,
+      });
+      console.log(error);
     }
-    console.log('Received values of form: ', data);
   };
 
   return (
@@ -131,51 +152,6 @@ const RegisterForm = () => {
       </Form.Item>
 
       <Form.Item
-        name="nickname"
-        label="Nickname"
-        tooltip="What do you want others to call you?"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your nickname!',
-            whitespace: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-
-      <Form.Item
-        name="phone"
-        label="Phone Number"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your phone number!',
-          },
-        ]}
-      >
-        <Input type="number" />
-      </Form.Item>
-
-      <Form.Item
-        name="gender"
-        label="Gender"
-        rules={[
-          {
-            required: true,
-            message: 'Please select gender!',
-          },
-        ]}
-      >
-        <Select placeholder="select your gender">
-          <Option value="male">Male</Option>
-          <Option value="female">Female</Option>
-          <Option value="other">Other</Option>
-        </Select>
-      </Form.Item>
-
-      <Form.Item
         name="agreement"
         valuePropName="checked"
         rules={[
@@ -187,7 +163,7 @@ const RegisterForm = () => {
         {...tailFormItemLayout}
       >
         <Checkbox>
-          I have read the <a href="">agreement</a>
+          I have read the <Link to="/">agreement</Link>
         </Checkbox>
       </Form.Item>
       <Form.Item {...tailFormItemLayout}>

@@ -1,5 +1,4 @@
 import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import LoginForm from "./LoginForm";
 import { Row, Col, Layout } from "antd";
 import "./layout.css";
@@ -7,7 +6,6 @@ import "./layout.css";
 const { Content } = Layout;
 
 const Login = () => {
-  const { loginWithRedirect } = useAuth0();
 
   return (
     <>

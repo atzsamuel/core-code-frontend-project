@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import { Layout, Menu } from "antd";
 import {
   BankTwoTone,
@@ -24,14 +25,14 @@ const SidebarLayout = () => {
         <div className="logo" />
         <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
           <Menu.Item key="1" icon={<PieChartTwoTone />}>
-            Dashboard
+            <Link to="/">Dashboard</Link>
           </Menu.Item>
-          <SubMenu key="sub1" icon={<BankTwoTone />} title="Accounts">
-            <Menu.Item key="3">Create Account</Menu.Item>
+          <SubMenu key="sub1" icon={<BankTwoTone />} title="Bank Accounts">
+            <Menu.Item key="3"><Link to="/bankaccount">Accounts</Link></Menu.Item>
           </SubMenu>
-          <SubMenu key="sub2" icon={<FundTwoTone />} title="Reports">
-            <Menu.Item key="4">View report</Menu.Item>
-            <Menu.Item key="5">Transactions report</Menu.Item>
+          <SubMenu key="sub2" icon={<FundTwoTone />} title="Finance">
+            <Menu.Item key="4"><Link to="/transaction">Transactions</Link></Menu.Item>
+            <Menu.Item key="5"><Link to="/transfer">Tranfer</Link></Menu.Item>
           </SubMenu>
           <Menu.Item key="6" icon={<HomeTwoTone />} >
             Home page

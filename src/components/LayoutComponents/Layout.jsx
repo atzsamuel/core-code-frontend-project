@@ -4,12 +4,10 @@ import "./layout.css";
 import FooterLayout from './footer/FooterLayout';
 import HeaderLayout from "./header/HeaderLayout";
 import SidebarLayout from "./sidebar/SidebarLayout";
-import BankAccounts from "../BankAccounts/BankAccounts";
 
 const { Content } = Layout;
 
-const LayoutComponents = () => {
-
+const LayoutComponents = ({ component: Component }) => {
   return (
     <>
       <Layout style={{ minHeight: "100vh" }}>
@@ -20,11 +18,11 @@ const LayoutComponents = () => {
 
           <Content style={{ margin: "0 16px" }}>
             <Breadcrumb style={{ margin: "16px 0" }}>
-              <Breadcrumb.Item>Accounts</Breadcrumb.Item>
-              <Breadcrumb.Item>Samuel Atz</Breadcrumb.Item>
+              <Breadcrumb.Item>/</Breadcrumb.Item>
+              {/* <Breadcrumb.Item>Samuel Atz</Breadcrumb.Item> */}
             </Breadcrumb>
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              <BankAccounts />
+              <Component />
             </div>
           </Content>
 

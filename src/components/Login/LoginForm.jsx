@@ -1,16 +1,49 @@
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { loginUser } from '../../apis/loginUser';
 import "./loginForm.css";
+import swal from 'sweetalert2';
+
 
 const LoginForm = () => {
+  const [form] = Form.useForm();
+  const navigate = useNavigate();
 
-  const onFinish = (values) => {
-    const data = {
-      email: values.email,
-      password: values.password
+  const onFinish = async (values) => {
+    try {
+      const data = {
+        email: values.email,
+        password: values.password
+      }
+      const response = await loginUser(data);
+      swal.fire({
+        width: '500px',
+        // height:'850px',
+        position: 'top-end',
+        icon: 'success',
+        title: `Welcome! ${response.data[0].firstname} ${response.data[0].lastname}`,
+        text: response.message,
+        showConfirmButton: false,
+        timer: 2500,
+      });
+      localStorage.setItem("userToken", response.data[0].user_token);
+      localStorage.setItem("userId", response.data[0].user_id);
+      form.resetFields();
+      navigate('/dashboard', { replace: true });
+    } catch (error) {
+      swal.fire({
+        width: '500px',
+        position: 'top-end',
+        icon: 'error',
+        title: 'Error',
+        text: 'Something went wrong, contact support',
+        showConfirmButton: false,
+        timer: 2500,
+      });
+      console.log(error);
+      navigate('/login', { replace: true });
     }
-    console.log('Received values of form: ', data);
   };
 
   return (
