@@ -1,4 +1,4 @@
-import { Col, Row, Button, Space, Table, Tag } from 'antd';
+import { Col, Row, Button, Space, Table, Tag, Card } from 'antd';
 import { useState } from 'react';
 import ModalForm from './ModalForm';
 import { listAllAccountBank } from '../../apis/bankAccount';
@@ -22,18 +22,23 @@ const BankAccounts = () => {
   }
   return (
     <>
+
       <Row>
         <Col span={2}>
           <ModalForm />
         </Col>
         <Col span={2}>
-          <Button onClick={listBank}>Consult</Button>
+          <Button shape="round" onClick={listBank}>Consult</Button>
         </Col>
       </Row>
       <br />
-      <Row>
-        <BankTable dataSource={data} />
-      </Row>
+      <Card title="Bank Accounts" style={{ marginTop: '20px' }} bordered={false}>
+        <Row>
+          <Col span={24}>
+            <BankTable dataSource={data} />
+          </Col>
+        </Row>
+      </Card>
     </>
   );
 }

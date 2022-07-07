@@ -37,8 +37,8 @@ const TransferTable = ({ dataSource }) => {
     },
     {
       title: 'Bank Account origin',
-      dataIndex: 'BANKACCOUNTORGIN',
-      key: 'BANKACCOUNTORGIN',
+      dataIndex: 'BANKACCOUNT_ORGIN',
+      key: 'BANKACCOUNT_ORGIN',
     },
     {
       title: 'Date Operation',
@@ -46,9 +46,9 @@ const TransferTable = ({ dataSource }) => {
       key: 'DATEADDED',
     },
     {
-      title: 'Balance origin account',
-      dataIndex: 'BALANCEORIGIN',
-      key: 'BALANCEORIGIN',
+      title: 'Bank account destination',
+      dataIndex: 'BANKACCOUNT_DESTINATION',
+      key: 'BANKACCOUNT_DESTINATION',
     },
   ]
   return (

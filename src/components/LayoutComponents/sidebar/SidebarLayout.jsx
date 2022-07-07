@@ -6,6 +6,7 @@ import {
   PieChartTwoTone,
   HomeTwoTone,
   FundTwoTone,
+  LoginOutlined
 } from "@ant-design/icons";
 
 const { Sider } = Layout;
@@ -25,7 +26,7 @@ const SidebarLayout = () => {
         <div className="logo" />
         <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
           <Menu.Item key="1" icon={<PieChartTwoTone />}>
-            <Link to="/">Dashboard</Link>
+            <Link to="/dashboard">Dashboard</Link>
           </Menu.Item>
           <SubMenu key="sub1" icon={<BankTwoTone />} title="Bank Accounts">
             <Menu.Item key="3"><Link to="/bankaccount">Accounts</Link></Menu.Item>
@@ -34,8 +35,8 @@ const SidebarLayout = () => {
             <Menu.Item key="4"><Link to="/transaction">Transactions</Link></Menu.Item>
             <Menu.Item key="5"><Link to="/transfer">Tranfer</Link></Menu.Item>
           </SubMenu>
-          <Menu.Item key="6" icon={<HomeTwoTone />} >
-            Home page
+          <Menu.Item key="6" icon={<LoginOutlined />} >
+            <Link to="/">Log out</Link>
           </Menu.Item>
         </Menu>
       </Sider>

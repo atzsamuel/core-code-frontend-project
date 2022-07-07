@@ -66,10 +66,24 @@ const reportTransaction = async (data) => {
   return response.json();
 };
 
+const dashboard = async (data) => {
+  const response = await fetch(`${apiUrl}/dashboard`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+    },
+    credentials: "include",
+    body: JSON.stringify(data),
+  });
+  return response.json();
+};
+
 export {
   transactionType,
   transactionCategories,
   createTransaction,
   getListBank,
   reportTransaction,
+  dashboard,
 };

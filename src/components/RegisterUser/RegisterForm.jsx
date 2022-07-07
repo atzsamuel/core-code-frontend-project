@@ -167,7 +167,7 @@ const RegisterForm = () => {
         </Checkbox>
       </Form.Item>
       <Form.Item {...tailFormItemLayout}>
-        <Button type="primary" htmlType="submit">
+        <Button shape="round" type="primary" htmlType="submit">
           Register
         </Button>
       </Form.Item>

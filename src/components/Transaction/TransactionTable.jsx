@@ -40,6 +40,21 @@ const TransactionTable = ({ dataSource }) => {
       dataIndex: 'AMOUNT',
       key: 'AMOUNT',
     },
+    {
+      title: 'Type transaction',
+      dataIndex: 'TYPE_TRANSACTION',
+      key: 'TYPE_TRANSACTION',
+    },
+    {
+      title: 'Category',
+      dataIndex: 'CATEGORY',
+      key: 'CATEGORY',
+    },
+    {
+      title: 'Bank account',
+      dataIndex: 'BANKACCOUNT',
+      key: 'BANKACCOUNT',
+    },
   ]
   return (
     <Table columns={columns} dataSource={dataSource} />

@@ -29,6 +29,7 @@ const LoginForm = () => {
       });
       localStorage.setItem("userToken", response.data[0].user_token);
       localStorage.setItem("userId", response.data[0].user_id);
+      localStorage.setItem("userName", `${response.data[0].firstname} ${response.data[0].lastname}`);
       form.resetFields();
       navigate('/dashboard', { replace: true });
     } catch (error) {
@@ -90,13 +91,13 @@ const LoginForm = () => {
       </Form.Item>
 
       <Form.Item>
-        <Button block type="primary" htmlType="submit" className="login-form-button">
+        <Button shape="round" block type="primary" htmlType="submit" className="login-form-button">
           Log in
         </Button>
       </Form.Item>
       <Form.Item>
-        <Button block type="secondary" htmlType="submit" className="login-form-button">
-          <Link to="/dashboard">Sign in with Google</Link>
+        <Button shape="round" block type="secondary" htmlType="submit" className="login-form-button">
+          <Link to="/#">Sign in with Google</Link>
         </Button>
       </Form.Item>
       <Form.Item>

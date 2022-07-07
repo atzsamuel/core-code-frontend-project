@@ -52,7 +52,7 @@ const BankTable = ({ dataSource }) => {
     },
   ]
   return (
-    <Table columns={columns} dataSource={dataSource} />
+    <Table columns={columns} dataSource={dataSource} expandable />
   );
 }
 

@@ -50,7 +50,7 @@ const ModalForm = () => {
 
   return (
     <>
-      <Button type="primary" onClick={modalVisible}>Add new</Button>
+      <Button shape="round" type="primary" onClick={modalVisible}>Add new</Button>
       <Modal title="Account Details" visible={isModalVisible} closable={false} footer={null} >
         <Form
           form={form}
@@ -149,10 +149,10 @@ const ModalForm = () => {
             <Input />
           </Form.Item>
           <Form.Item style={{ textAlign: 'right' }}>
-            <Button type="primary" htmlType="submit">
+            <Button shape="round" type="primary" htmlType="submit">
               Register
             </Button>
-            <Button type="danger" onClick={() => setIsModalVisible(false)}>
+            <Button shape="round" type="danger" onClick={() => setIsModalVisible(false)}>
               Cancel
             </Button>
           </Form.Item>

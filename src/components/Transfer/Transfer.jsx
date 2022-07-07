@@ -1,4 +1,4 @@
-import { Col, Row, Button } from 'antd';
+import { Col, Row, Button,Card } from 'antd';
 import { useState } from 'react';
 import ModalForm from './ModalForm';
 import { reportTransfer } from '../../apis/transfer';
@@ -21,12 +21,17 @@ const Tranfer = () => {
           <ModalForm />
         </Col>
         <Col span={2}>
-          <Button onClick={report}>Consult Transfers</Button>
+          <Button shape="round" onClick={report}>Consult Transfers</Button>
         </Col>
       </Row>
-      <Row>
-        <TransferTable dataSource={data} />
-      </Row>
+      <br />
+      <Card title="User's Transfer between bank accounts" style={{ marginTop: '20px' }} bordered={false}>
+        <Row>
+          <Col span={24}>
+            <TransferTable dataSource={data} />
+          </Col>
+        </Row>
+      </Card>
     </>
   );
 }

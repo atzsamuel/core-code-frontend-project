@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Col, Row, Button } from 'antd';
+import { Col, Row, Button, Card } from 'antd';
 import ModalForm from './ModalForm';
 import { reportTransaction } from '../../apis/transactionOperation';
 import TransactionTable from './TransactionTable';
@@ -20,13 +20,17 @@ const Transactions = () => {
           <ModalForm />
         </Col>
         <Col span={2}>
-          <Button onClick={report}>Consult Transactions</Button>
+          <Button shape="round" onClick={report}>Consult Transactions</Button>
         </Col>
       </Row>
       <br />
-      <Row>
-        <TransactionTable dataSource={data} />
-      </Row>
+      <Card title="User's Transaction" style={{ marginTop: '20px' }} bordered={false}>
+        <Row>
+          <Col span={24}>
+            <TransactionTable dataSource={data} />
+          </Col>
+        </Row>
+      </Card>
     </>
   );
 }
