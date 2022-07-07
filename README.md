@@ -37,3 +37,7 @@
 - Reports
   -Report user's transactions
   -Report transfer beetween bank accounts
+
+  ## Author
+
+[SamuelAtz](https://twitter.com/atz_samuel)
