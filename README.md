@@ -1,4 +1,4 @@
-<h1 align="center" id="title">My Budget App - Backend</h1>
+<h1 align="center" id="title">My Budget App - Frontend</h1>
 
 <p align="center">
 <img src="https://socialify.git.ci/atzsamuel/core-code-frontend-project/image?description=1&language=1&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fa%2Fa7%2FReact-icon.svg&name=1&owner=1&pattern=Circuit%20Board&stargazers=1&theme=Light" alt="My-Budet" width="640" height="320" />
@@ -15,7 +15,8 @@
 
 [Backend](https://github.com/atzsamuel/core-code-backend-project)
 
-<h1 align="center">Project features</h1>
+## Project features
+
 <p>The project consists of making a web application for budget management, this web application must have the following characteristics:</p>
 
 - Login/Register page
