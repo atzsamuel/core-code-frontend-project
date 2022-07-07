@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+<h1 align="center" id="title">My Budget App - Backend</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+<img src="https://socialify.git.ci/atzsamuel/core-code-frontend-project/image?description=1&language=1&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fa%2Fa7%2FReact-icon.svg&name=1&owner=1&pattern=Circuit%20Board&stargazers=1&theme=Light" alt="My-Budet" width="640" height="320" />
+</p>
 
-## Available Scripts
+## Installation Steps:
 
-In the project directory, you can run:
+1. Clone the repository.
+2. Open the project with Vscode.
+3. npm i
+4. npm run start
 
-### `npm start`
+## Backend code
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Backend](https://github.com/atzsamuel/core-code-backend-project)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h1 align="center">Project features</h1>
+<p>The project consists of making a web application for budget management, this web application must have the following characteristics:</p>
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Login/Register page
+- Option to add bank accounts
+- Option to add expenses/income
+- The application must have by default a list of categories to be able to use when recording an expense/income
+- Page to view expense/income history
+  - Filter by date
+  - Filter by category
+  - Filter by bank account
+- Transfers between local accounts (Within the same application)
+  - What comes out of the account is recorded as an expense
+  - What goes into the account is recorded as income
+- Handle different currencies as well as exchange rates
+- General dashboard
+  - A summary of the accounts should be shown
+  - From the dashboard, you can add expenses/income and also record local transactions
+- Reports
+  -Report user's transactions
+  -Report transfer beetween bank accounts
