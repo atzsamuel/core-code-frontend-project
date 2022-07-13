@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name:  frontend
-        image:  atzsamuel/frontend:0.1.0
+        image:  atzsamuel/frontend:0.1.0-gcp
         resources:
           requests:
             cpu: 100m
